@@ -1,0 +1,60 @@
+06/02/23
+
+Learnt and brushed topics about Github
+
+https://learngitbranching.js.org/
+
+1. linux basic commands(add more)
+
+
+
+2. Create a new repo
+
+3. Git stash 
+
+4. Git Upstream 
+
+
+
+07/02/23
+
+5. Git Checkout
+
+6. Git merge 
+
+7. More about branches
+
+8. Removing a commit from the pull request by force pushing it
+    
+    * If you want to remove a commit from the pull request or delete a commmit then using git log command retrieve the git has code. 
+
+    * Use git reset (hash_code) 
+
+    *  By resetting the commit will get unstaged
+
+    *  Alternatively, using  (git add .) then git stash it will be gone
+
+    * You check this in log #git log
+
+    * now online repo has something extra that ur local repo doesn't so you need force push it.
+
+    * git origin branch_name - f
+
+
+9. Merging a pull request   
+    * This technically means that you request for changes made in local branch to merge in upstream master branch 
+    da
+
+    * Just accept the merge request and vola! it is merged!
+ 
+
+10. Making forked project even with main project
+
+    *  You encounter this when a person requests a pull request and it get merged in the upstream repo. 
+
+    * To view the commits in local repo either you can select fetch upstream  to view in main (master) branch or 
+
+
+
+
+
