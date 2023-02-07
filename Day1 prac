@@ -6,39 +6,105 @@ https://learngitbranching.js.org/
 
 1. linux basic commands(add more)
 
+    * https://www.hostinger.com/tutorials/linux-commands
+
+    * ls -a list files
+    * ls .git
+    * create file => touch file.txt
+    * rm -rf file_name
+    
 
 
 2. Create a new repo
+    ##  git init
+
+    ##  git add .
+
+    ##  git commit -m "message"
+
+    ##  git branch -M main
+
+    ##  git remote add origin url_link
+    
+    ##  git push -u origin main
+
 
 3. Git stash 
 
+    ## git add 
+    
+    ##  git stash 
+    
+    ##  git push origin
+
+    ##  to bring back stash git stash pop
+
 4. Git Upstream 
+
+    https://www.javatpoint.com/git-upstream-and-downstream
+
+    The term upstream and downstream refers to the repository. Generally, upstream is from where you clone the repository, and downstream is any project that integrates your work with other works. However, these terms are not restricted to Git repositories.
+
+    * Sometimes we are trying to push some changes to the remote server, but it will show the error like "error: failed to push some refs to 'https :< remote repository Address>." There may be the reason that you have not set your remote branch. We can set the remote branch for the local branch. We will implement the following process to set the remote server:
+    
+    ## git remote -v 
+
+    https://www.javatpoint.com/git-remote
+
+    ## git push --set-upstream origin master  
 
 
 
 07/02/23
 
 5. Git Checkout
+    
+    * This basically means creating a new branch and commiting changes in that branch.
+
+    * to do that
+
+    ## git branch branch_name
+    ## git checkout branch_name
+
+    * Now the branch is pointing to the latest commit
+
 
 6. Git merge 
 
+    * When u work in a separate branch and you want merge in main branch then: 
+
+    ## git merge branch_name
+
+    * always better to work in a separate branch and then do pull request or merge.
+
 7. More about branches
+
+    ## Open source 
+
+    * Fork a repo for contribution
+
+    * Request by the option pull request 
+    
+    * Branches in simple languages is just a pointer to commit
+
+    ## New Feature --> New branch --> new request
+
 
 8. Removing a commit from the pull request by force pushing it
     
     * If you want to remove a commit from the pull request or delete a commmit then using git log command retrieve the git has code. 
 
-    * Use git reset (hash_code) 
+    ## Use git reset (hash_code) 
 
     *  By resetting the commit will get unstaged
 
-    *  Alternatively, using  (git add .) then git stash it will be gone
+    ##  Alternatively, using  (git add .) then git stash it will be gone
 
-    * You check this in log #git log
+    ##  You check this in log #git log
 
     * now online repo has something extra that ur local repo doesn't so you need force push it.
 
-    * git origin branch_name - f
+    ##  git origin branch_name - f
 
 
 9. Merging a pull request   
@@ -55,32 +121,32 @@ https://learngitbranching.js.org/
     * To view the commits in local repo either you can select fetch upstream  to view in main (master) branch or 
     (own fork and upstream repo is always maintained)
             
-            * git checkout main branch
+    ## git checkout main branch
             
-            * type git fetch --all --prune
+    ##  type git fetch --all --prune
 
-            * git reset --hard upstream/main
+    ##  git reset --hard upstream/main
            
-            *  U can check it using git log
+    ##  U can check it using git log
 
-            * git push origin master (to reflect in online repo)
+    ##  git push origin master (to reflect in online repo)
 
-            or in one line which is #git pull upstream# main make sure you checkout the main branch.
+    ##  or in one line which is #git pull upstream# main make sure you checkout the main branch.
 
-            * then make sure u push it to onine repo
+    ##  then make sure u push it to onine repo
 
 
 11. Squashing commits
 
     * git log indicates which all commits that u want squash into single commit
 
-    * git rebase -i commit has code till the one u want merge the commits
+    ##  git rebase -i commit has code till the one u want merge the commits
 
     *  select the commit u want to squash in the env and merge them with a message
 
-    *  create a message by pressing :x  and quit the env by pressing esc and :wq
+    ##   create a message by pressing :x  and quit the env by pressing esc and :wq
 
-    * If u want the commits from the log then, ##git reset --hard commit hash_code should be cautious with this code.
+    ##  If u want the commits from the log then, ##git reset --hard commit hash_code should be cautious with this code.
 
 
 12. Merge conflicts and how to resolve them?
@@ -89,8 +155,8 @@ https://learngitbranching.js.org/
 
     * The author of the repo can manual override it and resolve it.
 
-    
 
+#########################################################################################################################################################################
 
 
 
