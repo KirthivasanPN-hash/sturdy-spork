@@ -53,6 +53,45 @@ https://learngitbranching.js.org/
     *  You encounter this when a person requests a pull request and it get merged in the upstream repo. 
 
     * To view the commits in local repo either you can select fetch upstream  to view in main (master) branch or 
+    (own fork and upstream repo is always maintained)
+            
+            * git checkout main branch
+            
+            * type git fetch --all --prune
+
+            * git reset --hard upstream/main
+           
+            *  U can check it using git log
+
+            * git push origin master (to reflect in online repo)
+
+            or in one line which is #git pull upstream# main make sure you checkout the main branch.
+
+            * then make sure u push it to onine repo
+
+
+11. Squashing commits
+
+    * git log indicates which all commits that u want squash into single commit
+
+    * git rebase -i commit has code till the one u want merge the commits
+
+    *  select the commit u want to squash in the env and merge them with a message
+
+    *  create a message by pressing :x  and quit the env by pressing esc and :wq
+
+    * If u want the commits from the log then, ##git reset --hard commit hash_code should be cautious with this code.
+
+
+12. Merge conflicts and how to resolve them?
+
+    * Person A performs a pull request and then person B makes the changes using the commit method.
+
+    * The author of the repo can manual override it and resolve it.
+
+    
+
+
 
 
 
