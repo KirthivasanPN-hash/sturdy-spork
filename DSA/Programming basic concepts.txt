@@ -1,0 +1,34 @@
+07/02/23
+
+Static vs Dynamic Langauges
+
+1. Static 
+    * Perform type checking at compile time
+    * Errors will show at compile time
+    * Declare datatype before u use it 
+    * More control
+
+2. Dynamic
+
+    * Perform type checking at runtime
+    * Errors might not show till program is running
+    * No need to declare datatype of variables
+    * Saves time in writing code but might give error at runtime
+
+int a  = 10
+
+Simple logic: a stored in Stack and 10 stored in Heap
+
+# more than one ref var can point to the same object 
+
+# if value for one ref var is changed then the original value is also changed and affects other ref vars that are point to this object
+
+# objects do not have refer variable pointing to them then it goes for garbage collection
+
+
+
+
+Stack Memory
+
+    *  
+    
