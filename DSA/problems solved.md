@@ -321,3 +321,79 @@ class GFG {
 }
 
 ## Time Complexity: O(n*logn), n is the range 
+
+
+III. Write Java programs for the following:
+
+Intermediate Java Programs
+
+1. Factorial Program In Java - done 
+
+    # Approach 1
+
+    using for loop
+
+    # Approach 2
+
+    Using recursion
+
+    
+import java.io.*;
+import java.math.*;
+import java.util.Scanner;
+
+class Factorial{
+    static int fact(int n){
+        if(n==0){
+            return 1;
+        }
+        else{
+            return (n*fact(n-1));
+        }
+    }
+	public static void main(String args[])
+	{
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a number");
+        int n = sc.nextInt();
+        int f  = fact(n);
+		System.out.println("factorial: " +f);
+	}
+    }
+
+
+2. Calculate Electricity Bill
+
+    # Approach 1
+
+
+3. Calculate Average Of N Numbers -done
+4. Calculate Discount Of Product 
+
+    # Approach 1
+    
+5. Calculate Distance Between Two Points
+    Calculate Commission Percentage
+    Power In Java
+    Calculate Depreciation of Value
+    Calculate Batting Average
+    Calculate CGPA Java Program
+    Compound Interest Java Program
+    Calculate Average Marks
+    Sum Of N Numbers
+    Armstrong Number In Java
+    Find Ncr & Npr
+    Reverse A String In Java
+    Find if a number is palindrome or not
+    Future Investment Value
+    HCF Of Two Numbers Program
+    LCM Of Two Numbers
+    Java Program Vowel Or Consonant
+    Perfect Number In Java
+    Check Leap Year Or Not
+    Sum Of A Digits Of Number
+    Kunal is allowed to go out with his friends only on the even days of a given month. Write a program to count the number of days he can go out in the month of August.
+    Write a program to print the sum of negative numbers, sum of positive even numbers and the sum of positive odd numbers from a list of numbers (N) entered by the user. The list terminates when the user enters a zero.
+
+
+

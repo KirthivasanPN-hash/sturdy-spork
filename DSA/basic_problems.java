@@ -1,45 +1,29 @@
-
-import java.io.*;
-import java.math.*;
-
-class GFG {
-	
-	// Prints Armstrong Numbers in given range
-	static void findArmstrong(int low, int high)
-	{
-		for (int i = low + 1; i < high; ++i) {
-	
-			// number of digits calculation
-			int x = i;
-			int n = 0;
-			while (x != 0) {
-				x /= 10;
-				++n;
-			}
-	
-			// compute sum of nth power of
-			// its digits
-			int pow_sum = 0;
-			x = i;
-			while (x != 0) {
-				int digit = x % 10;
-				pow_sum += Math.pow(digit, n);
-				x /= 10;
-			}
-	
-			// checks if number i is equal
-			// to the sum of nth power of
-			// its digits
-			if (pow_sum == i)
-				System.out.print(i + " ");	
-		}
-	}
-	
-	public static void main(String args[])
-	{
-		int num1 = 100;
-		int num2 = 400;
-		findArmstrong(num1, num2);
-		System.out.println();
-	}
-}
+  
+    class ElectricityBill 
+    {   
+        // main() method start  
+        public static void main(String args[])   
+        {     
+            // declare variable units  
+            long units;  
+      
+            units = Long.parseLong(args[0]);  
+            // variable to calculate electricity bill to pay  
+            double billToPay = 0;          
+            // check whether units are less than 100  
+            if(units < 100)  
+            {  
+                billToPay = units * 1.20;  
+            }  
+            // check whether the units are less than 300  
+            else if(units < 300){  
+                billToPay = 100 * 1.20 + (units - 100) * 2;  
+            }  
+            // check whether the units are greater than 300  
+            else if(units > 300)  
+            {  
+                billToPay = 100 * 1.20 + 200 * 2 + (units - 300) * 3;  
+            }  
+            System.out.println("The electricity bill for " +units+ " is:" + billToPay);   
+        }   
+    }  
