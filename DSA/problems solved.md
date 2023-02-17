@@ -1,13 +1,10 @@
 https://github.com/kunal-kushwaha/DSA-Bootcamp-Java
 
-
-## Check sol from Javapoint and GFG
-
 ## Create flowchart and pseudocode for the following:
 
 1. Input a year and find whether it is a leap year or not. -done
 
-    # Approach 1
+    ## Approach:
 
     import java.util.*;
 
@@ -39,12 +36,13 @@ https://github.com/kunal-kushwaha/DSA-Bootcamp-Java
 
 2. Take two numbers and print the sum of both. -done
 
-    # Approach 1
+    ## Approach:
     
         * create class, methods accrodingly and call method
 
 3. Take a number as input and print the multiplication table for it. -done
-    # Approach 1
+     
+     ## Approach:
 
     import java.util.*;
 
@@ -361,39 +359,368 @@ class Factorial{
 	}
     }
 
-
+## 10/02/23
 2. Calculate Electricity Bill
 
     # Approach 1
 
+     // import required classes and package if any  
+    import java.util.*;  
+       
+    // create class ElectricityBillExample4 to calculate electricity bill using Inheritance  
+    class ElectricityBillExample4 extends CalculateBill  
+    {   
+        // main() method start  
+        public static void main(String args[])   
+        {     
+            // declare variable units  
+            int units;  
+      
+            // create Scanner class object to take input from user  
+            Scanner sc = new Scanner(System.in);  
+      
+            System.out.println("Enter number of units for calculating electricity bill.");  
+            units = sc.nextInt();  
+      
+            System.out.println("The electricity bill for "+units+" is:" + getBill(units));   
+        }   
+    }  
+           
+    // create simple class CalculateBill  
+    class CalculateBill  
+    {     
+        // variable to calculate electricity bill to pay  
+        static double billToPay;  
+        ***************why should we intialize here******
+        static double getBill(long units)  
+        {  
+            // check whether units are less than 100  
+            if(units < 100)  
+            {  
+                billToPay = units*1.20;  
+            }  
+            // check whether the units are less than 300  
+            else if(units < 300){  
+                billToPay = 100*1.20+(units - 100)*2;  
+            }  
+            // check whether the units are greater than 300  
+            else if(units > 300)  
+            {  
+                billToPay = 100*1.20+200*2+(units - 300)*3;  
+            }  
+            return billToPay;  
+        }      
+    }  
+
 
 3. Calculate Average Of N Numbers -done
-4. Calculate Discount Of Product 
+
+4. Calculate Discount Of Product -done
+    
+5. Calculate Distance Between Two Points
+
+    # approach 1
+
+
+public void givenTwoPoints_whenCalculateDistanceByFormula_thenCorrect() {
+    double x1 = 3;
+    double y1 = 4;
+    double x2 = 7;
+    double y2 = 1;
+
+    double distance = service.calculateDistanceBetweenPoints(x1, y1, x2, y2);
+
+    assertEquals(distance, 5, 0.001);
+}
+
+# Approach 2
+
+public double calculateDistanceBetweenPointsWithHypot(
+    double x1, 
+    double y1, 
+    double x2, 
+    double y2) {
+        
+    double ac = Math.abs(y2 - y1);
+    double cb = Math.abs(x2 - x1);
+        
+    return Math.hypot(ac, cb);
+}
+
+6. Calculate Commission Percentage - done (same like discount)
+    
+7. Power In Java -done
+
+   # int i=(int)Math.pow(5,2); //Type Cast to integer   
+
+8. Calculate Depreciation of Value 
+
+    # Approach 1
+
+V - initial rate, r - rate of depreciation and T - time
+
+import java.io.*;
+ 
+class Depreciation
+{
+ 
+// Function to return the depreciation of value
+static float D_rate(float v,
+                          float r, float t)
+{
+    float D = (float)(v * Math.pow((1 - r / 100), t));
+ 
+    return D;
+}
+public static void main(String[] args)
+{
+    float V1 = 200, R = 10, T = 2;
+     
+    System.out.print(Depreciation(V1, R, T));
+}
+}
+
+9. Calculate Batting Average -done
+
+    # Batting Average
+    batting avg = (runs scored)/(Number of times out)
+
+    Out = Number of innings - not out
+
+    import java.util.*;
+
+class Batting_avg {
+    static int avg_rate(int runs, int matches, int not_out) {
+
+        int out = matches - not_out;
+
+        if (out == 0) {
+            return -1;
+        }
+
+        int avg = (runs) / out;
+
+        return avg;
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter number of matches played: ");
+        int matches = sc.nextInt();
+        System.out.println("No of runs scored: ");
+        int runs = sc.nextInt();
+        System.err.println("Enter not out matches: ");
+        int not_out = sc.nextInt();
+
+        int avg = avg_rate(runs, matches, not_out);
+
+        if (avg == -1) {
+            System.out.println("NA");
+        } 
+        else {
+
+            System.out.println("The batting average is: " +avg);
+
+        }
+
+    }
+
+}
+
+10. Calculate CGPA Java Program (anna university)
+
 
     # Approach 1
     
-5. Calculate Distance Between Two Points
-    Calculate Commission Percentage
-    Power In Java
-    Calculate Depreciation of Value
-    Calculate Batting Average
-    Calculate CGPA Java Program
-    Compound Interest Java Program
-    Calculate Average Marks
-    Sum Of N Numbers
-    Armstrong Number In Java
-    Find Ncr & Npr
-    Reverse A String In Java
+
+11. Compound Interest Java Program - (same as batting prob)
+
+12. Calculate Average Marks -done
+
+13. Sum Of N Numbers -done
+    
+14. Armstrong Number In Java doubt
+
+15. Find Ncr & Npr -done
+
+    # Approach 
+    
+    import java.util.*;
+    public class NPR_NCR_prob {
+    public static int fact(int num){
+        int fact=1;
+        for(int i=1;i<=num;i++){
+            fact = fact*i;
+
+        }
+        return fact;
+    }
+    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the total number of objects: ");
+        int num = sc.nextInt();
+        System.out.println("enter the selected objects:  ");
+        int r = sc.nextInt();
+        System.out.println("Combination value: "+(fact(num)/(fact(num-r)*fact(r))));
+        System.out.println("Permutation value: "+(fact(num)/(fact(num-r))));
+    }
+}
+
+16. Reverse A String In Java -done (refer drive)
+    
     Find if a number is palindrome or not
-    Future Investment Value
-    HCF Of Two Numbers Program
-    LCM Of Two Numbers
-    Java Program Vowel Or Consonant
-    Perfect Number In Java
-    Check Leap Year Or Not
-    Sum Of A Digits Of Number
-    Kunal is allowed to go out with his friends only on the even days of a given month. Write a program to count the number of days he can go out in the month of August.
-    Write a program to print the sum of negative numbers, sum of positive even numbers and the sum of positive odd numbers from a list of numbers (N) entered by the user. The list terminates when the user enters a zero.
+    * palindrome of a number -done
+
+17. Future Investment Value
+
+    # Approach 1
+
+    formula for future investment
+    double f=p*Math.pow((1+r/100),y);
+
+18. HCF Of Two Numbers Program -done 
+    
+19. LCM Of Two Numbers -done
+    
+20. Java Program Vowel Or Consonant -done (check simple method)
+    
+21. Perfect Number In Java
+
+    # Approach:
+
+    public class perfectnum_prob {
+    public static void main(String args[]) {
+        long n, sum = 0;
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number: ");
+        n = sc.nextLong();
+        int i = 1;
+        // executes until the condition becomes false
+        while (i <= n / 2) {
+            if (n % i == 0) {
+                // calculates the sum of factors
+                sum = sum + i;
+            } // end of if
+              // after each iteration, increments the value of variable i by 1
+            i++;
+        } // end of while
+          // compares sum with the number
+        if (sum == n) {
+            // prints if sum and n are equal
+            System.out.println(n + " is a perfect number.");
+        } // end of if
+        else
+            // prints if sum and n are not equal
+            System.out.println(n + " is not a perfect number.");
+        }
+    }
+    
+22. Check Leap Year Or Not -done
+
+23. Sum Of A Digits Of Number
 
 
+    
+24. Kunal is allowed to go out with his friends only on the even days of a given month. Write a program to count the number of   days he can go out in the month of August.
+    
+25. Write a program to print the sum of negative numbers, sum of positive even numbers and the sum of positive odd numbers from a list of numbers (N) entered by the user. The list terminates when the user enters a zero.
+
+
+
+## Functions problems
+
+1. Define two methods to print the maximum and the minimum number respectively among three numbers entered by the user. -done
+
+2. Define a program to find out whether a given number is even or odd. -done 
+
+
+3. A person is eligible to vote if his/her age is greater than or equal to 18. Define a method to find out if he/she is eligible  to vote. -done
+
+4. Write a program to print the sum of two numbers entered by user by defining your own method. -done
+
+5. Define a method that returns the product of two numbers entered by user. -done
+
+6. Write a program to print the circumference and area of a circle of radius entered by user by defining your own method. -done
+
+7. Define a method to find out if a number is prime or not. -done
+
+8. Write a program that will ask the user to enter his/her marks (out of 100). Define a method that will display grades according to the marks entered as below:
+
+ 
+Marks        Grade 
+91-100         AA 
+81-90          AB 
+71-80          BB 
+61-70          BC 
+51-60          CD 
+41-50          DD 
+<=40          Fail
+
+
+package com.tcc.java.programs;
+ 
+import java.util.Scanner;
+ 
+public class StudentGrade {
+    public static void main(String[] args) {
+        int count, i;
+        float totalMarks = 0, percentage, average;
+        Scanner scanner;
+        scanner = new Scanner(System.in);
+ 
+        System.out.println("Enter Number of Subject");
+        count = scanner.nextInt();
+ 
+        System.out.println("Enter Marks of " + count + " Subject");
+        for (i = 0; i < count; i++) {
+            totalMarks += scanner.nextInt();
+        }
+         
+        System.out.println("Total MArks : " + totalMarks);
+        // Each subject is of 100 Marks
+        percentage = (totalMarks / (count * 100)) * 100;
+ 
+        switch ((int) percentage / 10) {
+        case 9:
+            System.out.println("Grade : A+");
+            break;
+        case 8:
+        case 7:
+            System.out.println("Grade : A");
+            break;
+        case 6:
+            System.out.println("Grade : B");
+            break;
+        case 5:
+            System.out.println("Grade : C");
+            break;
+        default:
+            System.out.println("Grade : D");
+            break;
+        }
+    }
+}
+
+
+9. Write a program to print the factorial of a number by defining a method named 'Factorial'. Factorial of any number n is represented by n! and is equal to 1 * 2 * 3 * .... * (n-1) *n. E.g.- 
+
+4! = 1 * 2 * 3 * 4 = 24 
+3! = 3 * 2 * 1 = 6 
+2! = 2 * 1 = 2 
+Also, 
+1! = 1 
+0! = 1
+
+10. Write a function to find if a number is a palindrome or not. Take number as parameter. -done.
+
+11. Convert the programs in flow of program, first java, conditionals & loops assignments into functions. -done
+
+12. Write a function to check if a given triplet is a Pythagorean triplet or not. (A Pythagorean triplet is when the sum of the square of two numbers is equal to the square of the third number). 
+
+
+13. Write a function that returns all prime numbers between two given numbers.
+
+14. Write a function that returns the sum of first n natural numbers. -done
 
