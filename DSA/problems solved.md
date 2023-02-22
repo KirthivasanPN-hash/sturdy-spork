@@ -724,3 +724,123 @@ Also,
 
 14. Write a function that returns the sum of first n natural numbers. -done
 
+22/02
+
+https://github.com/kunal-kushwaha/DSA-Bootcamp-Java
+
+Arrays easy LEETCODE
+
+1. 
+
+2. Concatenation of Array
+
+code:
+
+class Solution {
+    public int[] getConcatenation(int[] nums) {
+        int n = nums.length;
+        int ans[] = new int[2*n];
+        for(int i=0;i<nums.length;i++){
+            ans[i] = nums[i];
+            ans[i+n] = nums[i];
+        }
+        return ans;
+    }
+}
+
+
+
+
+3. Running Sum of 1d Array
+
+Code: 
+
+class Solution {
+
+    public int[] runningSum(int[] nums) {
+
+        for(int i=1;i<nums.length;i++){
+
+            nums[i]+=nums[i-1];
+
+        }        
+
+        return nums;
+
+    }
+
+}
+
+
+4. Richest Customer Wealth
+
+Code:
+
+class Solution {
+    public int maximumWealth(int[][] accounts) {
+       // int row_wealth  = accounts.length;
+       // int col_wealth = accounts[0].length;
+        int max=0,sum;
+        for(int i=0;i<accounts.length;i++){
+            sum=0;
+            for(int j=0;j<accounts[0].length;j++){
+                sum+=accounts[i][j];
+            }
+                if(sum>max)
+                max = sum;
+            }
+        
+        return max;
+    }
+}
+
+5. Shuffle the array
+
+code:
+
+}class Solution {
+    public int[] shuffle(int[] nums, int n) {
+        int ans[] = new int[2*n];
+        int count = 0;
+        for(int i=0;i<n;i++){
+            ans[count] = nums[i];
+            ans[count+1] = nums[n+i];
+            count+=2;
+        }
+        return ans;
+    }
+}
+
+6. Kids With the Greatest Number of Candies
+
+code:
+
+ class Solution {
+    public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
+        int max = 0;
+        for(int c : candies) max = Math.max(c, max);
+        List<Boolean> output = new ArrayList(candies.length);
+        for(int c : candies) output.add(c + extraCandies >= max);
+        return output;
+    }
+}
+
+7. Number of good pairs
+
+code:
+
+class Solution {
+    public int numIdenticalPairs(int[] nums) {
+        int count=0;
+        for(int i=0;i<nums.length;i++)
+        {
+            for(int j=i+1;j<nums.length;j++){
+                if(nums[i]==nums[j])
+                {
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+}
