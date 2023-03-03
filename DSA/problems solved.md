@@ -728,6 +728,7 @@ Also,
 
 https://github.com/kunal-kushwaha/DSA-Bootcamp-Java
 
+3,7
 Arrays easy LEETCODE
 
 1. 
@@ -842,5 +843,163 @@ class Solution {
             }
         }
         return count;
+    }
+}
+
+8. How many numbers are small than the current number
+
+code:
+
+class Solution {
+    public int[] smallerNumbersThanCurrent(int[] nums) {
+        int ans[] = new int[nums.length];
+        int i,j;
+        int count = 0;
+        for(i=0;i<nums.length;i++){
+            
+            for(j=0;j<nums.length;j++){
+                
+            if(nums[i]>nums[j]){
+                count++;
+            }
+                
+            
+        }
+        ans[i] = count;
+        count=0;
+    }
+    return ans;
+}
+}
+
+
+9. Create a target array 
+
+code:
+
+class Solution {
+    public int[] createTargetArray(int[] nums, int[] index) {
+        int[] target = new int[nums.length];
+        
+        for(int i = 0; i < index.length; i++){
+            int ind = index[i];
+            
+            if(ind < i){
+                int j = i;
+                while(j > ind){
+                    target[j] = target[j - 1]; 
+                    target[j - 1] = nums[i];
+                    j--;
+                }
+            }
+            else{
+                 target[i] = nums[ind];
+            }
+            
+        }
+        return target;
+    }
+}
+
+
+10. Check if a sentence is pangram
+
+code:
+
+class Solution {
+    public boolean checkIfPangram(String sentence) {
+        
+        for (int i = 0; i < 26; ++i) {
+            char currChar = (char)('a' + i);
+            if (sentence.indexOf(currChar) == -1)
+                return false;
+        }
+        return true;
+    }
+}
+
+11. Count Item Matching a Rule
+
+code:
+
+class Solution {
+    public int countMatches(List<List<String>> items, String ruleKey, String ruleValue) {
+        int res = 0;
+        
+        for(int i = 0 ;i<items.size();i++){
+            if(ruleKey.equals("type") && items.get(i).get(0).equals(ruleValue)) res++;
+            if(ruleKey.equals("color") && items.get(i).get(1).equals(ruleValue)) res++;
+            if(ruleKey.equals("name") && items.get(i).get(2).equals(ruleValue)) res++;
+        }
+        
+        return res;
+        
+    }
+}
+
+12. didnt understand
+
+
+13. Flipping an Image
+
+code:
+
+class Solution {
+    public int[][] flipAndInvertImage(int[][] image) {
+        
+        for(int i=0;i<image.length;i++){
+           reverse(image[i]);
+           invert(image[i]);
+        }
+        // Either can use the for loop to invert the array individually or can use in single for loop
+        // for(int i=0;i<image.length;i++){
+        //    invert(image[i]);
+        // }
+        return image;
+        
+    }
+    
+    static void reverse(int []image){
+        int s=0;
+        int e=image.length-1;
+        
+        while(s<e){
+            int temp=image[s];
+            image[s] = image[e];
+            image[e] = temp;
+            s++;
+            e--;
+        }
+    }
+    
+    static void invert(int []arr){
+           for(int i=0;i<arr.length;i++){
+               if(arr[i]==0){
+                   arr[i]=1;
+               }
+               else{
+                   arr[i]=0;
+               }
+           }
+    }
+}
+
+14. should check 
+
+15. Matrix Diagonal Sum
+
+code:
+
+class Solution {
+    public int diagonalSum(int[][] mat) {
+        int sum=0;
+		int n=mat.length;
+        for(int i=0;i<n;i++){
+            sum+=mat[i][i]+mat[i][n-i-1];
+        }
+        if(mat.length%2 != 0){
+            sum-=mat[n/2][n/2];// if matrix is odd the middle number added two times,so we deduct the middle number
+        }
+        return sum;
     }
 }
