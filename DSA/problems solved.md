@@ -1,5 +1,9 @@
 https://github.com/kunal-kushwaha/DSA-Bootcamp-Java
 
+https://www.jackrutorial.com/2019/03/how-to-convert-int-array-to-integer-in-java.html
+
+
+
 ## Create flowchart and pseudocode for the following:
 
 1. Input a year and find whether it is a leap year or not. -done
@@ -1003,3 +1007,111 @@ class Solution {
         return sum;
     }
 }
+
+16. https://leetcode.com/problems/find-numbers-with-even-number-of-digits/ 
+ 
+
+(my approach) 
+ class Solution {
+    public int findNumbers(int[] nums) {
+        int count=0,sum;
+        for(int i=0;i<nums.length;i++){
+            sum=0;
+            int n = 0;
+            while(nums[i]!=0){
+             sum = nums[i]+sum;
+            n = nums[i]/10;
+            if(sum%2==0){
+                count++;
+            }
+            }
+        }
+        return count;
+    }
+}
+
+(solution)
+class Solution {
+    public int findNumbers(int[] nums) {
+        int result = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if ((int)((Math.log10(nums[i])) + 1) % 2 == 0) result++;
+        }
+        return result;
+    }
+}
+
+17. Transpose Matrix 
+class Solution {
+    public int[][] transpose(int[][] matrix) {
+        int n=matrix.length;
+        int m=matrix[0].length;
+        int[][] res =new int[m][n];
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                res[i][j]=matrix[j][i];
+            }
+        }
+        return res;
+    }
+}
+
+
+## Diff Approach
+  StringBuilder builder = new StringBuilder();
+  for (int num : intArrs) {
+   builder.append(num);
+  }
+  int number = Integer.parseInt(builder.toString());
+
+
+
+18.  Add to Array form List problem
+public List<Integer> addToArrayForm(int[] num, int K) {
+    List<Integer> res = new LinkedList<>();
+    for (int i = num.length - 1; i >= 0; --i) {
+        res.add(0, (num[i] + K) % 10);
+        K = (num[i] + K) / 10;
+    }
+    while (K > 0) {
+        res.add(0, K % 10);
+        K /= 10;
+    }
+    return res;
+}
+
+19. Maximum population 2d array (2d array prob)
+
+20. Determine Whether Matrix Can Be Obtained By Rotation (2d array prob)
+
+21. Two sum problem
+ 
+## Brute force code
+
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] + nums[j] == target) {
+                    return new int[] {i, j};
+                }
+            }
+        }
+        return new int[] {};
+    }
+}
+
+## Optimized code
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        Map<Integer, Integer> numToIndex = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            if (numToIndex.containsKey(target - nums[i])) {
+                return new int[] {numToIndex.get(target - nums[i]), i};
+            }
+            numToIndex.put(nums[i], i);
+        }
+        return new int[] {};
+    }
+}
+
