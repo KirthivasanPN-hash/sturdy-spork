@@ -32,3 +32,184 @@ Stack Memory
 
     *  
     
+
+04/03/22
+
+Array
+## Why arrays?
+## Arrays stored 
+## Syntax
+# How they work
+
+1. Syntax 
+
+int [] arr = 
+↑ happens during compile time 
+
+new int[5];
+↑ happens during run time/execution Heap memory (dynamic memory allocation)
+
+int[] arr = {1,2,3,4,5}; 
+
+// here arr is a reference variable
+new int is  the argument 
+
+
+int [] arr; // declaration of array. arr is getting defined in Stack
+arr = new int[5]; //actually here object is being created in the Memory(heap)
+
+
+2. It depends on the JVM whether to implement or not  
+Java Language specification they mentioned that heap objects are not continuous
+
+//hence array objects in Java are not continuous and 
+
+3. index in Java 
+
+4. new keyword that used to create an object
+
+Null is basicallly a special literal that can only be assigned to non primitives
+Eg:
+a. int num = null; //error
+b. String st = null; //error
+
+Note: In python there are no primitives only objects
+
+5. Enhanced for loop (imp) read its usage
+
+for(int num : arr){ //for every element in array, print the element 
+    System.out.println(num + " "); // here num represents element of the array
+}
+
+05/03/2023
+
+6. toString() method 
+
+System.out.println(Arrays.toString(arr));
+// This pritns 
+
+
+7. Call by Value and Call by reference
+
+
+8. Mutability (change the obj) behaviour for arrays
+
+a. consider nums as the original reference variable and that is pointing to the object.
+
+b. Another reference variable in the fucntion is pointing to the object and if the object value changes then original reference variable also changes.
+
+ Eg; 
+
+ public class PassingFunction {
+    public static void main(String[] args) {
+        int nums[] = { 3, 4, 5, 6 };
+        System.out.println(Arrays.toString(nums));
+        change(nums);
+        System.out.println(Arrays.toString(nums));
+    }
+
+    static void change(int[] arr) {
+        arr[0] = 99;
+    }
+} 
+
+9. 2D Array
+
+The size of column is not mandatory only the rows check 9.3
+
+Size of individual rows doesnt matter
+
+
+Simple Java 2D program 
+
+import java.io.*;
+import java.util.*;
+
+class 2D-prg {
+	public static void main(String[] args)
+	{
+		int[][] arr1 = { { 1, 2, 3 }, { 4, 5, 6 } };
+		int[][] arr2 = { { 4, 5, 6 }, { 1, 3, 2 } };
+		int[][] sum = new int[2][3];
+
+		// adding two 2D arrays element-wise
+		for (int i = 0; i < arr1.length; i++) {
+			for (int j = 0; j < arr1[0].length; j++) {
+				sum[i][j] = arr1[i][j] + arr2[i][j];
+			}
+		}
+		
+		System.out.println("Resultant 2D array: ");
+		for (int i = 0; i < sum.length; i++) {
+			System.out.println(Arrays.toString(sum[i]));
+		}
+	}
+}
+ 
+
+9.1. int[][] arr1 = { { 1, 2, 3 }, { 4, 5, 6 } }
+
+    println(arr1[1][0]);
+    Output: 4
+
+9.2. int[][] // first [] indicate the row size and second indicates the column size
+
+
+9.3 int[][] arr = new int [3][4];
+System.out.println(arr.length);
+
+## Input elements in 2D array
+
+intint[][] arr = new int [3][4];
+System.out.println(arr.length);
+for(int row = 0;row<arr.length;row++){
+    for(int col=0;col< arr[row].length; col++)  {
+        arr[row][col] = sc.nextInt();
+    }
+    println(); //this prints in matrix form and after traversing every column
+
+}
+
+
+Enhanced for loop
+intint[][] arr = new int [3][4];
+System.out.println(arr.length);
+for(int row = 0;row<arr.length;row++){
+    for(int[]a:arr){
+        println(Arrays.toString(a));
+    }
+
+
+
+## Arraylist (similar to vectors in C++)
+
+Syntax:
+public class ArrayListExample{
+    public static void main(String[] args){
+        ArrayList<Integer> list  = new ArrayList<>(capacity); // Integer represents wrapper classes
+
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.add(6);
+        list.add(8);
+        list.add(9);
+        list.contains(6); // checking if value exists
+        list.set(0,99) //setting value
+        list.remove(2); //index 2 will be removed
+
+
+        System.out.println(list); //this call its own toString method
+
+
+// Input arraylist
+
+    list.add(in.nextInt());
+
+//get item of any index
+
+    System.out.println(list.get(i)); // pass index syntax here, list[index] syntax will not work here
+
+    }
+}
