@@ -37,3 +37,24 @@ public class B_search {
     }
     
 
+    class Solution {
+        public char nextGreatestLetter(char[] letters, char target) {
+            
+            int ans[] = new int[letter.length];
+            for(int j=0;j<ans.length;j++){
+                ans[j] = (int)(letters.charAt[j]-'0');
+            }
+            int i =0;
+            int l = ans.length-1;
+            while(i<l){
+                mid = i+(l-i)/2;
+                if[mid==target]
+                return mid;
+                else if(mid<target)
+                i = mid+1;
+                else
+                l = mid-1;
+            }
+            return -1;
+        }
+    }
