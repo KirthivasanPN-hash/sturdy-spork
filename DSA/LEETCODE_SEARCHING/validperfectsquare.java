@@ -1,4 +1,4 @@
-
+ 
 //367. Valid Perfect Square
 public class validperfectsquare {
 
