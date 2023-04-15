@@ -247,3 +247,20 @@ public class multidimensional_arraylist {
 
 
 
+15/04/23
+
+to return array of specific range 
+
+Arrays.copyOfRange(array_name, head, tail)
+
+
+
+13/04/23
+
+Bubble sort also known as sinking sort and exchange sort
+
+Space complexity  = O(1) //no extra space for copying the array aka inplace sorting algorithm
+
+Time complexity = Best case O(N) = sorted 
+                worst case O(N sq) = sorted in opp direction
+                
