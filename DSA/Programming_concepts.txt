@@ -257,6 +257,15 @@ Arrays.copyOfRange(array_name, head, tail)
 
 13/04/23
 
+Inplace sorting algorithm ->> no need to create nw array 
+
+sorting technique a easiest approach is:
+14523
+14253
+14235 //from the last it is already sorted 
+
+so loop runs till length-i;
+
 Bubble sort also known as sinking sort and exchange sort
 
 Space complexity  = O(1) //no extra space for copying the array aka inplace sorting algorithm
@@ -264,3 +273,22 @@ Space complexity  = O(1) //no extra space for copying the array aka inplace sort
 Time complexity = Best case O(N) = sorted 
                 worst case O(N sq) = sorted in opp direction
                 
+
+
+27/04
+
+Total Number of comparisons = (n-1)+(n-2)(n-3)+(n-4)
+
+                                4n - (1+2+3+4)
+                                4n - (n*(n+1))/2
+                                
+                    Time complexity     O(N^2)
+
+
+Stable and Unstable difference ?
+
+order should be the same and value should be the same as well.
+
+
+
+
