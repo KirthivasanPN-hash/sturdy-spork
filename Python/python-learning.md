@@ -295,7 +295,7 @@ x
 //output
 {1}
 
-# a set is only concerned with unique elements! We can cast a list with multiple repeat elements to a set to get the unique elements. 
+# a set is only concerned with unique elements! We can create a list with multiple repeat elements to a set to get the unique elements. 
 
 
 5. Files
@@ -324,4 +324,387 @@ This happens because you can imagine the reading "cursor" is at the end of the f
 
 myfile.seek(0)
 now you can read from the start
+
+
+
+# 31/05/23
+
+50*(2)+0.25
+
+
+# 18/06 
+
+for loop in strings 
+Code:
+for letter in 'This is a string.':
+    print(letter)
+
+Output:
+T
+h
+i
+s
+ 
+i
+s
+ 
+a
+ 
+s
+t
+r
+i
+n
+g
+.
+
+## Dictionaries 
+dic_items = ([('k1',1),('k2',2),('k3',3)])
+
+for k,v in d.items 
+print(k)
+print(v)
+
+k1
+1
+k2
+2
+k3
+3
+
+note: dictionaries are always unsorted so, u got to sort them
+
+list(d.keys())
+
+sorted(d.values())
+
+
+## Enumerate
+
+# Without enumerate
+index_count = 0
+
+for letter in 'abcde':
+    print("At index {} the letter is {}".format(index_count,letter))
+    index_count += 1
+
+Output:
+At index 0 the letter is a
+At index 1 the letter is b
+At index 2 the letter is c
+At index 3 the letter is d
+At index 4 the letter is e
+
+# With enumerate
+
+for i,letter in enumerate('abcde'):
+    print("At index {} the letter is {}".format(i,letter))
+
+Output:
+At index 0 the letter is a
+At index 1 the letter is b
+At index 2 the letter is c
+At index 3 the letter is d
+At index 4 the letter is e
+
+# Enumerate using list
+list(enumerate('abcde'))
+
+Output:
+[(0, 'a'), (1, 'b'), (2, 'c'), (3, 'd'), (4, 'e')]
+
+
+# Zip
+mylist1 = [1,2,3,4,5]
+mylist2 = ['a','b','c','d','e']
+list(zip(mylist1,mylist2))
+
+Output:
+[(1, 'a'), (2, 'b'), (3, 'c'), (4, 'd'), (5, 'e')]
+
+
+Few built in functions 
+# in()
+# not in()
+# min()
+# max()
+# random() --> randint(0,100) 
+
+## List Comprehensions
+
+1. lst = [x for x in 'word']
+print(lst)
+
+output
+lst = [x for x in 'word']
+print(lst)
+
+2. Square root for all the numbers
+
+lst = [x**2 for x in range(0,11)]
+print(lst)
+
+output
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+3. Alternative way to print list 
+lst = [x for x in range(11) if x%3==0]
+print
+
+4. basic celsius to farenheit coversion
+
+celsius = [23.0,28.0,32.0]
+
+lst = [((9/5)*temp+32) for temp in celsius]
+print(lst)
+
+output
+[73.4, 82.4, 89.6]
+
+5. Nested list
+lst = [x**2 for x in [x**2 for in range (11)]]
+print(lst)
+
+output:
+[0, 1, 16, 81, 256, 625, 1296, 2401, 4096, 6561, 10000]
+
+
+# Assignment
+
+1. st = 'Print only the words that start with s in this sentence'
+for x in st.split(): 
+    if x[0]=='s':
+        print(x)
+
+2. Use range() to print all the even numbers from 0 to 10.
+list(range(0,11,2))
+
+
+3. [x for x in range(1,51) if x%3 == 0]
+
+[3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48]
+ 
+
+4. st = 'Print every word in this sentence that has an even number of letters'
+for w in st.split():
+    if len(w)%2 ==0:
+        print(w)
+
+
+5. Write a program that prints the integers from 1 to 100. But for multiples of three print "Fizz" instead of the number, and for the multiples of five print "Buzz". For numbers which are multiples of both three and five print "FizzBuzz".
+
+for num in range(1,101):
+    if num % 3 == 0 and num % 5 == 0:
+        print("FizzBuzz")
+    elif num % 3 == 0:
+        print("Fizz")
+    elif num % 5 == 0:
+        print("Buzz")
+    else:
+        print(num)
+
+
+6.  Use List Comprehension to create a list of the first letters of every word in the string below:
+
+st = 'Create a list of the first letters of every word in this string'
+
+Ans: lst = [word[0] for word in st.split()]
+print(lst)
+
+
+### GUESS GAME
+
+import random
+x = random.randint(0,100)
+
+guesses = [0]
+
+while True:
+    
+    guess = int(input("I think the number is between 1 and 100.\n What is your guess?"))
+    
+    if guess < 1 or guess > 100:
+        print('OUT OF BOUNDS! please try again')
+        continue
+    
+    if guess==x:
+        print(f'CONGRATULATIONS, you guessed it in only {len(guesses)} GUESSES!!')
+        break
+        
+    
+    guesses.append(guess)
+    
+    if guesses[-2]:
+        if abs(x-guess) < abs(x-guesses[-2]):
+            print('WARMER!')
+        
+        else:
+            print('COLDER!')
+            
+    else:
+        
+        if abs(x-guess) <=10:
+            print('WARM!')
+            
+        else:
+            print('COLD!')
+
+
+# Methods
+
+1. Method perform specific actions on object and can also make arguments just like functions 
+
+object,method(arg1,arg2,etc..)
+
+few built in methods
+
+    append
+    count
+    extend
+    insert
+    pop
+    remove
+    reverse
+    sort
+
+
+# Functions
+
+def function_name(name):
+    print(f'Eloo {name}')
+
+//calling
+print(name)
+
+2. The return keyword allows you to actually save the result of the output of a function as a variable. The print() function simply displays the output to you, but doesn't save it for future use. Let's explore this in more detail
+
+3. Eg:
+
+def print_result(a,b)
+print(a+b)
+
+my_result = print_result(20,20)
+o/p: 40
+
+my_result //calling
+type(my_result)
+o/p: NoneType
+
+4. Difference between return and print
+
+def return_result(a,b)
+    return a+b
+
+my_result = return_result(20,20)
+o/p: 40 
+
+my_result+my_result
+o/p: 80
+
+5. Function to return list of even numbers //for IDE
+
+even_numbers = []
+
+def check_list(num_lst):
+    for num in num_lst:
+        if num%2==0:
+            even_numbers.append(num)
+            
+        else:
+            pass
+            
+    return even_numbers
+    
+print(check_list([1,2,3]))
+
+6. Unpacking tuples:
+
+prices = [('AAPL',100),('GOOG',200),('NKE',300)]
+
+
+a. for item in prices:
+print(item)
+
+o/p:
+('AAPL', 200)
+('GOOG', 300)
+('MSFT', 400)
+    
+b. for stock, price in prices:
+        print(stock/price)
+
+o/P:
+stock   price
+AAPL    200 300 400
+GOOG
+MSFT 
+
+7. Max value:
+work_hours = [('Abby',100),('Billy',400),('Cassie',800)]
+
+def employee_check(work_hours):
+    
+    # Set some max value to intially beat, like zero hours
+    current_max = 0
+    # Set some empty value before the loop
+    employee_of_month = ''
+    
+    for employee,hours in work_hours:
+        if hours > current_max:
+            current_max = hours
+            employee_of_month = employee
+        else:
+            pass
+    
+    # Notice the indentation here
+    return (employee_of_month,current_max)
+
+employee_check(work_hours)
+
+('Cassie', 800)
+
+8.  A small game
+
+from random import shuffle
+
+my_lst = ['0','','']
+
+def shuffle_lst(my_lst):
+    shuffle(my_lst)
+    
+    return my_lst
+    
+
+def player_guess():
+    
+    guess = ''
+    
+    while guess not in ['0','1','2']:
+        
+        guess = input("Pick a number: 0,1 or 2: ")
+        
+    return int(guess)
+    
+def check_guess(my_lst,guess):
+    
+    if my_lst[guess] == '0':
+        print('Congrats!, Correct guess')
+    
+    else:
+        print('Try again')
+        print(my_lst)
+        
+# runnning the functions 
+
+my_lst = ['0','','']
+
+mixed_lst = shuffle_lst(my_lst)
+
+guess = player_guess()
+
+print(check_guess(shuffle_lst,guess))
+
+
+
+
 
