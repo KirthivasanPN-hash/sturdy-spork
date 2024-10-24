@@ -1,0 +1,50 @@
+//https://www.youtube.com/watch?v=sH1La9tCxw0&ab_channel=ProgrammersZone
+//https://leetcode.com/problems/determine-whether-matrix-can-be-obtained-by-rotation/
+import java.util.*;
+public class Mat_possiblerotat {
+    static void rotate(int[][]mat) {
+        int n = mat.length;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < i; j++) {
+                int temp = mat[i][j];
+                mat[i][j] = mat[j][i];
+                mat[j][i] = temp;
+            }
+        }
+        int start = 0;
+        int end = mat.length - 1;
+        while (start < end) {
+            for (int row = 0; row < mat.length; row++) {
+                int tempmat = mat[row][start];
+                mat[row][start] = mat[row][end];
+                mat[row][end] = tempmat;
+            }
+            start++;
+            end--;
+        }
+    }
+    static boolean check(int mat[][], int[][]target) {
+        for (int i = 0; i < mat.length; i++) {
+            for (int j = 0; j < mat.length; j++) {
+                if (mat[i][i] != target[i][i])
+                    return false;
+            }
+
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        int [][]mat= {{0,1},{1,0}};
+        int [][]target = {{1,0},{0,1}};
+
+        for(int i=0;i<4;i++){
+            if(check(mat,target)){
+                System.out.println("true");
+        }
+            rotate(mat);
+
+        }
+        System.out.println("false");
+    }
+}
