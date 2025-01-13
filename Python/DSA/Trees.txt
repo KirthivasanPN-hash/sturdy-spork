@@ -1,0 +1,25 @@
+
+
+Important tree concepts 
+
+1. Creation 
+2. Insertion 
+3. Deletion'
+4. Updation
+5. Traversals 
+
+Types of Traversals
+
+1. Preorder
+2. Inorder
+3. Postorder
+
+Searches in Trees
+
+1. BFS
+2. DFS
+
+
+Important problems in leetcode 
+
+
