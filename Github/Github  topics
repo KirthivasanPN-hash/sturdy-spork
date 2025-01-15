@@ -63,7 +63,7 @@ https://learngitbranching.js.org/
 
     * to do that
 
-    ## git branch branch_name
+    ## git branch branch_name`
     ## git checkout branch_name
 
     * Now the branch is pointing to the latest commit and checking branch
@@ -157,9 +157,89 @@ https://learngitbranching.js.org/
     * The author of the repo can manual override it and resolve it.
 
 
-13. Setting up tracking 
-    ##  git branch --set-upstream-to=origin/main
+13. Setting up tracking Remote-tracking Branch:
 
+They are used to link what you are working on locally, with that on the remote.
+They know which remote branch to grab changes from when git pull or git fetch is executed. Typing git status will state how many commits ahead you are of the remote branch.
+
+    ##  git branch --set-upstream-to=origin/main
+    ## git branch -r
+    ## git branch --set-upstream-to=origin/<branch-name> (for setting up the upstream)
+
+    ## git pull origin main
+
+
+14. Local repository has the correct remote set
+
+    ## git remote -v
+
+15. Deleting a commit id from the branch
+
+    a. Replace n with the number of commits you want to go back. For example, if you want to modify the last 5 commits:
+
+    ## git rebase -i HEAD~n
+
+    How to use the shell ?
+    After resolving
+
+    ## git push origin main --force
+
+
+    b. Reset option
+
+    ## git reset --hard abc123^
+
+    c. Undo the changes made by a specific commit but still keep a record of the commit in history, you can use git revert
+
+    ## git revert
+
+
+16. Removing rebase files (powershell)
+
+    ## Remove-Item -Recurse -Force .git\rebase-merge
+
+17. Git editor change
+
+    ## git config --global core.editor "notepad"
+
+18. Fatal: refusing to merge unrelated histories
+means that the main and master branches have different root commits, and Git is refusing to merge them because their histories do not overlap.
+
+    a. Merge branches
+    
+    ## git merge feature-branch
+    ## git merge master --allow-unrelated-histories
+
+
+    ## git add <conflicted-file>
+
+    ## git push origin main
+
+    Note: Always Pull Latest Changes Before Merging
+
+    ## git pull origin main
+
+
+Merging	
+Combines the history of both branches	
+Creates a merge commit
+Keeps both branches' histories intact
+Easier to track branch merges
+
+
+Rebasing
+Rewrites the history to appear linear
+No merge commit is created
+Makes it look like master started from main
+Cleaner and more linear history
+
+(merging)
+A --- B --- C --- M
+               /   \
+            D --- E --- F 
+
+rebasing 
+A --- B --- C --- D --- E --- F
 
 
 #########################################################################################################################################################################
