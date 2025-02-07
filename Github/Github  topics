@@ -242,6 +242,67 @@ rebasing
 A --- B --- C --- D --- E --- F
 
 
+
+19. Now I manually added a submodule into main folder | I dont want the git in submodule | Added in main folder the submodule |
+
+
+a. navigate to sub module 
+
+## cd submodule
+
+## rm -rf .git
+
+## git add | commit | push
+
+
+
+20. Merging  2 repositories into MAIN
+
+    ## mkdir common_repo
+    ## cd
+    ## git init
+    
+    ( if pushed to github)
+    ## git remote add repo1 <url of repo1>
+    ## git remote add repo2 <url of repo2>
+
+    ## git fetch repo1
+    ## git fetch repo2
+
+    ## git checkout repo1/main
+    ## git checkout -b repo1-branch
+    ## mkdir repo1
+    ## git mv * repo1/
+    ## git commit -m
+
+
+    ## git checkout repo2/main
+    ## git checkout -b repo2-branch
+    ## mkdir repo2
+    ## git mv * repo2/
+    ## git commit -m
+    
+
+    ## git remote add origin <url_of_common_repo>
+    ## git push origin repo1-branch
+    ## git push origin repo2-branch
+
+
+    #### AUTOMATIC WAY #### of merging 
+
+    git remote add repo1 <url>
+    git fetch repo1
+    git subtree add --prefix=repo1 repo1/main --squash
+    
+
+    git remote add repo2 <url>
+    git fetch repo2
+    git subtree add --prefix=repo2 repo2/main --squash
+
+    git remote add origin <url>
+    git push origin main
+    
+
 #########################################################################################################################################################################
 
 
