@@ -54,9 +54,6 @@ https://learngitbranching.js.org/
     ## git push --set-upstream origin master  
 
 
-
-07/02/23
-
 5. Git Checkout
     
     * This basically means creating a new branch and commiting changes in that branch.
@@ -301,7 +298,33 @@ a. navigate to sub module
 
     git remote add origin <url>
     git push origin main
-    
+
+
+
+   #### MAIN and other BRANCH totally different history
+   - git fetch origin
+   - git checkout -b other branch origin/main
+   - git commit, add and push
+
+   ### ALTERNATE WAY
+   - git checkout master
+   - git rebase origin/main  # brings in remote history before branching
+   - git checkout -b feature/profile-icon   
+   - git push origin feature/profile-icon
+
+### Removing GIT intialization on windows powershell
+   - Remove-Item -Recurse -Force .git
+
+### Cherry PICK to put the old code to share same HISTORY as main
+   - git checkout
+   - git pull origin main
+   - git checkout -b other-branch
+   - git cherry-pick <commit_old_feature>
+   - git push -u origin branch
+   
+## DELETE a branch locallu and remote
+   - git branch -d feature/profile-icon   -local
+   - git push origin --delete feature/profile-icon -remote
 
 #########################################################################################################################################################################
 
